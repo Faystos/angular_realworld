@@ -7,6 +7,7 @@ import { environment } from '../environments/environment'; // Angular CLI enviro
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {AuthModule} from "./auth/auth.module";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import {AuthModule} from "./auth/auth.module";
     BrowserModule,
     AppRoutingModule,
     AuthModule,
+    HttpClientModule,
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
