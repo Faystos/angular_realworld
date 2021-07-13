@@ -16,7 +16,7 @@ import {BackendErrorsInterface} from "../../../shared/types/backendErrors.interf
 export class RegisterComponent implements OnInit{
   form!: FormGroup;
   isSubmitting$!: Observable<boolean>;
-  backendErrors$: Observable<BackendErrorsInterface | null>
+  backendErrors$!: Observable<BackendErrorsInterface | null>
 
   constructor(
     private fb: FormBuilder,
