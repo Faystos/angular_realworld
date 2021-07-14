@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 import {AuthModule} from "./auth/auth.module";
 import {HttpClientModule} from "@angular/common/http";
 import {EffectsModule} from "@ngrx/effects";
+import {HeaderModule} from "./shared/modules/header/header.module";
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {EffectsModule} from "@ngrx/effects";
       maxAge: 25,
       logOnly: environment.production
     }),
+    HeaderModule
   ],
   providers: [],
   bootstrap: [AppComponent]
