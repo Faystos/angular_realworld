@@ -21,7 +21,10 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" [routerLink]="['/profiles', (currentUser$ | async).username]">
-              <img class="user-pic" [src]="(currentUser$ | async).username" alt="иконка пользователя"/>
+              <img
+                src="{{(currentUser$ | async).image || stopperUserPhoto}}"
+                class="user-pic"  alt="user icon"
+              />
               &nbsp; {{(currentUser$ | async).username}}
             </a>
           </li>

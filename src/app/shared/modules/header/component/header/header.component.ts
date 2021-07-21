@@ -4,6 +4,8 @@ import {Observable} from "rxjs";
 import {CurrentUserInterface} from "../../../../types/currentUser.interface";
 import {select, Store} from "@ngrx/store";
 
+
+
 @Component({
   selector: 'mc-header',
   templateUrl: './header.component.html',
@@ -14,8 +16,11 @@ export class HeaderComponent implements OnInit{
   isLoggedIn$: Observable<boolean>;
   isAnonymous$: Observable<boolean>;
   currentUser$: Observable<CurrentUserInterface | null>;
+  stopperUserPhoto: string;
 
-  constructor(private store: Store) {}
+  constructor(private store: Store) {
+    this.stopperUserPhoto = '../../../../../../assets/img/no_photo.jpg'
+  }
 
   ngOnInit(): void {
     this.initializeValues();
@@ -27,3 +32,6 @@ export class HeaderComponent implements OnInit{
     this.currentUser$ = this.store.pipe(select(currentUserSelector));
   }
 }
+
+// [src]="(currentUser$ | async).username"
+// (currentUser$ | async).image ||
