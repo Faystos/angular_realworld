@@ -12,6 +12,7 @@ import {AuthModule} from "./auth/auth.module";
 import {HeaderModule} from "./shared/modules/header/header.module";
 import {PersistanceService} from "./shared/services/persistance.service";
 import {AuthInterceptor} from "./shared/services/authInterceptor.service";
+import {GlobalFeedModule} from "./globalFeed/globalFeed.module";
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import {AuthInterceptor} from "./shared/services/authInterceptor.service";
       maxAge: 25,
       logOnly: environment.production
     }),
-    HeaderModule
+    HeaderModule,
+    GlobalFeedModule
   ],
   providers: [
     PersistanceService,

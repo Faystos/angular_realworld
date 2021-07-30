@@ -7,7 +7,7 @@ import {select, Store} from "@ngrx/store";
 
 
 @Component({
-  selector: 'mc-header',
+  selector: 'rw-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
