@@ -14,7 +14,7 @@
         <a [routerLink]="['/profiles', article.author.username]">
           {{article.author.username}}
         </a>
-        <span class="date">{{article.createdAt}}</span>
+        <span class="date">{{article.createdAt | date: 'dd:MM:yyyy'}}</span>
       </div>
       <div class="pull-xs-right">
         ADD TO FAVORITES
@@ -26,5 +26,11 @@
       HERE IS LIST OF TAGS
     </a>
   </div>
-  PAGINATION
+<!--  PAGINATION-->
+  <rw-pagination
+    [total]="(feedData$ | async).articlesCount"
+    [limit]="limit"
+    [url]="baseUrl"
+    [currentPage]="currentPage"
+  ></rw-pagination>
 </div>
