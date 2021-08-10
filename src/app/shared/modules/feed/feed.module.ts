@@ -10,6 +10,7 @@ import {RouterModule} from "@angular/router";
 import {ErrorMessageModule} from "../errorMessage/errorMessage.module";
 import {LoaderModule} from "../loader/loader.module";
 import {PaginationModule} from "../pagination/pagination.module";
+import {TagListModule} from "../tagList/tagList.module";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {PaginationModule} from "../pagination/pagination.module";
     StoreModule.forFeature('feed', reducers),
     ErrorMessageModule,
     LoaderModule,
-    PaginationModule
+    PaginationModule,
+    TagListModule,
   ],
   exports: [
     FeedComponent
