@@ -11,6 +11,7 @@ import {ErrorMessageModule} from "../errorMessage/errorMessage.module";
 import {LoaderModule} from "../loader/loader.module";
 import {PaginationModule} from "../pagination/pagination.module";
 import {TagListModule} from "../tagList/tagList.module";
+import {PopularTagsModule} from "../popularTags/popularTags.module";
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import {TagListModule} from "../tagList/tagList.module";
     LoaderModule,
     PaginationModule,
     TagListModule,
+    PopularTagsModule,
   ],
   exports: [
     FeedComponent
