@@ -1,11 +1,21 @@
-<div class="sidebar" *ngIf="popularTags$ | async">
+<div class="sidebar">
   <p>Popular Tags</p>
-  <div class="tag-list">
-    <a class="tag-default tag-pill"
-      [routerLink]="['/tags', tag]"
-      *ngFor="let tag of popularTags$ | async"
-    >
-      {{tag}}
-    </a>
-  </div>
+  <ng-container   *ngIf="popularTags$ | async">
+    <div class="tag-list">
+      <a class="tag-default tag-pill"
+         [routerLink]="['/tags', tag]"
+         *ngFor="let tag of popularTags$ | async"
+      >
+        {{tag}}
+      </a>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="isLoading$ | async">
+    Loading...
+  </ng-container>
+
 </div>
+
+
+<!--*ngIf="popularTags$ | async"-->
