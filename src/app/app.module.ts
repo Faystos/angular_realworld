@@ -14,6 +14,8 @@ import {HeaderModule} from "./shared/modules/header/header.module";
 import {PersistanceService} from "./shared/services/persistance.service";
 import {AuthInterceptor} from "./shared/services/authInterceptor.service";
 import {GlobalFeedModule} from "./globalFeed/globalFeed.module";
+import {YourFeedModule} from  "./yourFeed/yourFeed.module";
+
 
 
 @NgModule({
@@ -35,7 +37,8 @@ import {GlobalFeedModule} from "./globalFeed/globalFeed.module";
       logOnly: environment.production
     }),
     HeaderModule,
-    GlobalFeedModule
+    GlobalFeedModule,
+    YourFeedModule,
   ],
   providers: [
     PersistanceService,
