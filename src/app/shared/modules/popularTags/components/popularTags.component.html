@@ -3,8 +3,8 @@
   <ng-container   *ngIf="popularTags$ | async">
     <div class="tag-list">
       <a class="tag-default tag-pill"
-         [routerLink]="['/tags', tag]"
          *ngFor="let tag of popularTags$ | async"
+         [routerLink]="['/tags', tag]"
       >
         {{tag}}
       </a>

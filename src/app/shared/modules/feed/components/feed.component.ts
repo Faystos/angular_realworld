@@ -1,4 +1,4 @@
-import {Component, Input, OnDestroy, OnInit} from "@angular/core";
+import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from "@angular/core";
 import {select, Store} from "@ngrx/store";
 import {getFeedAction} from "../store/action/getFeed.action";
 import {Observable, Subscription} from "rxjs";
@@ -14,7 +14,7 @@ import {ActivatedRoute, Params, Router} from "@angular/router";
   styleUrls: ['./feed.component.scss']
 })
 
-export class FeedComponent implements OnInit, OnDestroy{
+export class FeedComponent implements OnInit, OnChanges, OnDestroy{
   @Input('apiUrl') apiUrlProps: string;
 
   isLoading$: Observable<boolean>;
@@ -34,6 +34,12 @@ export class FeedComponent implements OnInit, OnDestroy{
   ngOnInit(): void {
     this.initializeValues();
     this.initializeListeners();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    const isApiUrlChanged: boolean = !changes.apiUrlProps.firstChange &&
+      changes.apiUrlProps.currentValue !== changes.apiUrlProps.previousValue;
+    if (isApiUrlChanged)  this.fetchFeed();
   }
 
   ngOnDestroy(): void {

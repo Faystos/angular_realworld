@@ -15,6 +15,7 @@ import {PersistanceService} from "./shared/services/persistance.service";
 import {AuthInterceptor} from "./shared/services/authInterceptor.service";
 import {GlobalFeedModule} from "./globalFeed/globalFeed.module";
 import {YourFeedModule} from  "./yourFeed/yourFeed.module";
+import {TagFeedModule} from "./tagFeed/tagFeed.module";
 
 
 
@@ -39,6 +40,7 @@ import {YourFeedModule} from  "./yourFeed/yourFeed.module";
     HeaderModule,
     GlobalFeedModule,
     YourFeedModule,
+    TagFeedModule,
   ],
   providers: [
     PersistanceService,
